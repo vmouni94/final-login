@@ -1,0 +1,23 @@
+button[type=submit] {
+  border-radius: 25px;
+  width: 80%;
+}
+
+.card {
+  border-radius: 25px;
+}
+
+.text-muted {
+  /*letter-spacing: 1px;*/
+  word-spacing: 1px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched {
+  border: 1px solid lawngreen;
+}
