@@ -77,7 +77,8 @@ export class AuthService {
 
 
   signupAlert(heading, msg) {
-    const link = this.router.navigateByUrl('/register');
+
+    const link = this.router.navigate(['/register']);
     $('.modal-alert').modal({ show : false, keyboard : false, backdrop : 'static' });
     $('.modal-alert .modal-header h4').text(heading);
     $('.modal-alert .modal-body p').html(msg);

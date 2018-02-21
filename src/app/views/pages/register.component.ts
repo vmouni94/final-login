@@ -12,6 +12,8 @@ export class RegisterComponent {
   @ViewChild('f') signupForm: NgForm;
   defaultRole = 'developer';
   defaultCountry = 'usa';
+  messageClass;
+  message;
 
   user: any = {};
   // user = new User;
@@ -99,12 +101,17 @@ export class RegisterComponent {
         .signup(form)
         .subscribe(user => {
           if (user.status === 1) {
-            this.authService
-              .showLockedAlert('Success!', 'Your account has been created.<br>Please confirm your email to verify.');
-            // this.router.navigateByUrl('/');
+            // this.authService
+            //   .showLockedAlert('Success!', 'Your account has been created.<br>Please confirm your email to verify.');
+            // // this.router.navigateByUrl('/');
+            this.messageClass='alert alert-success';
+            this.message=user.message;
+
           } else {
-            this.authService
-              .signupAlert('Whoops!', user.message);
+            // this.authService
+            //   .signupAlert('Whoops!', user.message);
+            this.messageClass='alert alert-danger';
+            this.message=user.message;
           }
         });
     }
