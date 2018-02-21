@@ -2,7 +2,14 @@ button[type=submit] {
   border-radius: 25px;
   width: 80%;
 }
+.well{
+  max-width: 350px; margin-top: 0px;
+}
 
+.login{
+  border-radius:15px;
+   width:50%;
+}
 .card {
   border-radius: 25px;
 }

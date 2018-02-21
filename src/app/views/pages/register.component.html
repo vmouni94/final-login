@@ -4,8 +4,8 @@
       <div class="col-xs-8 col-sm-8 col-md-6 col-lg-5 offset-xs-2 offset-sm-2 offset-md-3 offset-lg-3">
         <div class="card-group">
           <div class="card pl-3 pr-3 pt-1 pb-1">
-            <div class="card-body text-center">
-              <form id="form-login" method="post" class="well" #form="ngForm" (ngSubmit)="signup(form.value)" style="width: 350px; margin-top: 0px;">
+            <div class="card-body text-center" style="text-align: center;">
+              <form id="form-login" method="post" class="well" #form="ngForm" (ngSubmit)="signup(form.value)">
 
               <img src="../../../assets/img/logo.png" class="img-fluid" alt="RDOPS">
                 <p class="text-muted">Create your account</p>
@@ -143,13 +143,18 @@
                       >Create Account</button>
                   </div>
                 </div>
+                <div class="row mt-4 mb-4">
+                  <div class="col-md-12">
+                    <button
+                      type="Login"
+                      routerLink="/pages/login"
+                      class="btn btn-primary login"
+                    >Login</button>
+                  </div>
+                </div>
+
               </form>
-              <div class="col-xs-12 col-sm-12 col-md-6">
-                <button
-                  type="button"
-                  routerLink="/pages/login"
-                  class="btn btn-link px-0" style="margin-left:130px;">Login</button>
-              </div>
+
             </div>
           </div>
         </div>
