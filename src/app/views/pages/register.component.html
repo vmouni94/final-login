@@ -22,11 +22,12 @@
                       ngModel
                       name="name"
                       required
-                      #fullname="ngModel">
+                      #name="ngModel">
                   </div>
-                  <span
-                    *ngIf="!fullname.valid && fullname.touched"
-                    class="help-block">Please enter valid Name!</span>
+
+                  <span *ngIf="!name.valid && name.touched"
+                  class="help-block">required name</span>
+
                 </div>
 
                 <div>
@@ -35,7 +36,7 @@
                       <span class="input-group-text">@</span>
                     </div>
                     <input
-                      type="text"
+                      type="email"
                       class="form-control"
                       placeholder="Email"
                       ngModel
@@ -100,10 +101,10 @@
                       ngModel
                       name="user"
                       required
-                      #username="ngModel">
+                      #user="ngModel">
                   </div>
                   <span
-                    *ngIf="!username.valid && username.touched"
+                    *ngIf="!user.valid && user.touched"
                     class="help-block">Please enter valid Username!</span>
                 </div>
 
@@ -119,11 +120,12 @@
                       ngModel
                       name="pass"
                       required
-                      #password="ngModel">
+                      #pass="ngModel">
                   </div>
                   <span
-                    *ngIf="!password.valid && password.touched"
-                    class="help-block">Please enter Password!</span>
+                    *ngIf="!pass.valid && pass.touched"
+                    class="help-block">Please enter  Password!</span>
+
                 </div>
 
                 <!--<div class="input-group form-group mb-4">-->
@@ -138,7 +140,7 @@
                     <button
                       type="submit"
                       class="btn btn-primary"
-                      [disabled]="!f.valid">Create Account</button>
+                      >Create Account</button>
                   </div>
                 </div>
               </form>

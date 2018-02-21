@@ -4,7 +4,7 @@
       <div class="col-xs-8 col-sm-8 col-md-6 col-lg-5 offset-xs-2 offset-sm-2 offset-md-3 offset-lg-3">
         <div class="card-group">
           <div class="card p-3">
-            <form id="form-login" method="post" class="well" style="width: 330px; height: 450px;margin:auto;">
+            <form id="form-login" method="post" class="well" #form="ngForm" style="width: 330px; height: 450px;margin:auto;">
             <div class="card-body text-center">
                 <img src="../../../assets/img/logo.png" class="img-fluid" alt="RDOPS">
                 <p class="text-muted">Sign In to your account</p>
@@ -23,7 +23,7 @@
                       #username="ngModel">
                   </div>
                   <span
-                    *ngIf="!username.valid && username.touched"
+                    *ngIf="username.touched"
                     class="help-block">Please enter Username!</span>
                 </div>
 
@@ -42,7 +42,7 @@
                       #password="ngModel">
                   </div>
                   <span
-                    *ngIf="!password.valid && password.touched"
+                    *ngIf="password.touched"
                     class="help-block">Please enter Password!</span>
                 </div>
 
@@ -52,7 +52,7 @@
                            id="submit-tf"
                            name="submit"
                            (click)="login(this.form)"
-                           [disabled]="!f.valid"
+
                            class="btn btn-primary button-sign-in form-control"
                            value="Sign In">
 

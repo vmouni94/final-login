@@ -10,7 +10,7 @@ declare let $: any;
 export class AuthService {
   hosturl: string = window.location.host;
   //domain="http://localhost:8080";
- 
+
    user;
 
   loggedIn = false;
@@ -36,7 +36,7 @@ export class AuthService {
   login(user) {
     this.loggedIn = true;
     return this.http
-      .post('/api/login', user)
+      .post('/login', user)
       .map(res => res.json());
   }
 
@@ -68,7 +68,7 @@ export class AuthService {
   signup(user) {
     user.url = this.hosturl;
     return this.http
-      .post('/api/signup', user)
+      .post('/signup', user)
       .map(res => res.json());
   }
 
