@@ -105,7 +105,7 @@ export class RegisterComponent {
             //   .showLockedAlert('Success!', 'Your account has been created.<br>Please confirm your email to verify.');
             // // this.router.navigateByUrl('/');
             this.messageClass='alert alert-success';
-            this.message=user.message;
+            this.message='Your account has been created.<br>Please confirm your email to verify.';
 
           } else {
             // this.authService
