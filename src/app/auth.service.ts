@@ -36,7 +36,7 @@ export class AuthService {
   login(user) {
     this.loggedIn = true;
     return this.http
-      .post('/login', user)
+      .post('http://localhost:8080/login', user)
       .map(res => res.json());
   }
 
@@ -66,9 +66,9 @@ export class AuthService {
   // }
 
   signup(user) {
-    user.url = this.hosturl;
+
     return this.http
-      .post('/signup', user)
+      .post('http://localhost:8080/signup', user)
       .map(res => res.json());
   }
 

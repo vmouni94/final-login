@@ -23,7 +23,7 @@
                       #username="ngModel">
                   </div>
                   <span
-                    *ngIf="username.touched"
+                    *ngIf="!username.valid && username.touched"
                     class="help-block">Please enter Username!</span>
                 </div>
 
@@ -42,7 +42,7 @@
                       #password="ngModel">
                   </div>
                   <span
-                    *ngIf="password.touched"
+                    *ngIf="!password.valid && password.touched"
                     class="help-block">Please enter Password!</span>
                 </div>
 
