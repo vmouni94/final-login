@@ -28,7 +28,7 @@ export const navigation = [
   // },
   {
     title: true,
-    name: 'projects'
+    name: 'Projects'
   },
   {
     name: 'projects',
@@ -199,16 +199,16 @@ export const navigation = [
   //   title: true,
   //   name: 'Extras',
   // },
-  {
-    name: 'Login',
-    url: '/pages/login',
-    icon: 'icon-star'
-  },
-  {
-    name: 'Register',
-    url: '/pages/register',
-    icon: 'icon-star'
-  },
+  // {
+  //   name: 'Login',
+  //   url: '/pages/login',
+  //   icon: 'icon-star'
+  // },
+  // {
+  //   name: 'Register',
+  //   url: '/pages/register',
+  //   icon: 'icon-star'
+  // },
   // {
   //   name: 'Pages',
   //   url: '/pages',

@@ -24,8 +24,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
 
     else {
       this.router.navigate(['/']);
+      return false;
+
     }
-    return false;
+
   // .checkSession()
   //     .map(userData => {
   //       if (userData.status === 1) {
