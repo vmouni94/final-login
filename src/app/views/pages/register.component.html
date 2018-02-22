@@ -5,7 +5,7 @@
         <div class="card-group">
           <div class="card pl-3 pr-3 pt-1 pb-1">
             <div class="card-body text-center" style="text-align: center;">
-              <form id="form-login" method="post" class="well" #form="ngForm" (ngSubmit)="signup(form.value)">
+              <form id="form-login"  class="well" ngNativeValidate name ="form" (ngSubmit)= signup()>
 
               <img src="../../../assets/img/logo.png" class="img-fluid" alt="RDOPS">
                 <p class="text-muted">Create your account</p>
@@ -19,14 +19,14 @@
                       type="text"
                       class="form-control"
                       placeholder="Full Name"
-                      ngModel
-                      name="name"
+                      [(ngModel)]="fullname"
+                      name="fullname"
                       required
-                      #name="ngModel">
+                      #fullname1="ngModel">
                   </div>
 
-                  <span *ngIf="!name.valid && name.touched"
-                  class="help-block">required name</span>
+                  <span *ngIf="!fullname1.valid && fullname1.touched"
+                  class="help-block">required Full name</span>
 
                 </div>
 
@@ -39,14 +39,13 @@
                       type="email"
                       class="form-control"
                       placeholder="Email"
-                      ngModel
+                      [(ngModel)]="email"
                       name="email"
-                      email
                       required
-                      #email="ngModel">
+                      #email1="ngModel">
                   </div>
                   <span
-                    *ngIf="!email.valid && email.touched"
+                    *ngIf="!email1.valid && email1.touched"
                     class="help-block">Please enter valid Email-ID!</span>
                 </div>
 
@@ -58,8 +57,10 @@
                     <select
                       id="role"
                       class="form-control"
-                      [ngModel]="defaultRole"
-                      name="role">
+                      [(ngModel)]="role"
+                      name="role"
+                      required
+                      #role1="ngModel">
                       <option value="developer">Developer</option>
                       <option value="analyst">System Analyst</option>
                       <option value="admin">Admin</option>
@@ -78,8 +79,9 @@
                     <select
                       id="country"
                       class="form-control"
-                      [ngModel]="defaultCountry"
-                      name="country">
+                      [(ngModel)]="country"
+                      name="country"
+                      #country1="ngModel">
                       <option value="usa">United States</option>
                       <option value="india">India</option>
                     </select>
@@ -98,13 +100,13 @@
                       type="text"
                       class="form-control"
                       placeholder="Username"
-                      ngModel
-                      name="user"
+                      [(ngModel)]="username"
+                      name="username"
                       required
-                      #user="ngModel">
+                      #username2="ngModel">
                   </div>
                   <span
-                    *ngIf="!user.valid && user.touched"
+                    *ngIf="!username2.valid && username2.touched"
                     class="help-block">Please enter valid Username!</span>
                 </div>
 
@@ -117,13 +119,13 @@
                       type="password"
                       class="form-control"
                       placeholder="Password"
-                      ngModel
-                      name="pass"
+                      [(ngModel)]="password"
+                      name="password"
                       required
-                      #pass="ngModel">
+                      #password2="ngModel">
                   </div>
                   <span
-                    *ngIf="!pass.valid && pass.touched"
+                    *ngIf="!password2.valid && password2.touched"
                     class="help-block">Please enter  Password!</span>
 
                 </div>
@@ -152,13 +154,13 @@
                     >Login</button>
                   </div>
                 </div>
-                <div class="row show-hide-message">
+                <!--<div class="row show-hide-message">-->
 
-                  <div [ngClass]="messageClass">
-                    {{message}}
-                  </div>
+                  <!--<div [ngClass]="messageClass">-->
+                    <!--{{message}}-->
+                  <!--</div>-->
 
-                </div>
+                <!--</div>-->
 
               </form>
 

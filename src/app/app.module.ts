@@ -5,6 +5,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
+
 // Import containers
 import {
   FullLayoutComponent,
@@ -68,6 +69,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import {HttpModule} from '@angular/http';
+import { AlertComponent } from './components/alert/alert.component';
+import {AlertService} from "./services/alert.service";
+import {UserService} from "./services/user.service";
+import {AuthenticationService} from "./services/authentication.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -77,16 +83,22 @@ import {HttpModule} from '@angular/http';
     TabsModule.forRoot(),
     ChartsModule,
     FormsModule,
+    HttpModule,
+    HttpClientModule,
     HttpModule
   ],
   declarations: [
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
+    AlertComponent
   ],
   providers: [
     AuthService,
+    AlertService,
+    UserService,
+    AuthenticationService,
     AuthGuard,
     {
       provide: LocationStrategy,

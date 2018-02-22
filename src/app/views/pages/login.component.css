@@ -3,6 +3,9 @@ button[type=submit] {
   width: 80%;
 }
 
+.well{
+  max-width: 300px;
+}
 .card {
   border-radius: 25px;
 }

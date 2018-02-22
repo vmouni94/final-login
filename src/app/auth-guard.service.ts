@@ -8,29 +8,24 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 
-import { AuthService } from './auth.service';
+import {UserService} from "./services/user.service";
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
   role: String;
-  constructor(private authService: AuthService,
+  constructor(private user:UserService,
               private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    return this.authService
+    if (this.user.getUserLogService()){
+      return true;
+    }
 
-
-      .isAuthenticated()
-      .then(
-        (authenticated: boolean) => {
-          if (authenticated) {
-            return true;
-          } else {
-            this.router.navigate(['/']);
-          }
-        }
-      );
+    else {
+      this.router.navigate(['/']);
+    }
+    return false;
   // .checkSession()
   //     .map(userData => {
   //       if (userData.status === 1) {

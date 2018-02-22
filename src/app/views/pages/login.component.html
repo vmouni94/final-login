@@ -4,7 +4,7 @@
       <div class="col-xs-8 col-sm-8 col-md-6 col-lg-5 offset-xs-2 offset-sm-2 offset-md-3 offset-lg-3">
         <div class="card-group">
           <div class="card p-3">
-            <form id="form-login" method="post" class="well" #form="ngForm" style="width: 330px; height: 450px;margin:auto;">
+            <form id="form-login" class="well" (ngSubmit)="login()" name="form"  style="width: 330px; height: 450px;margin:auto;">
             <div class="card-body text-center">
                 <img src="../../../assets/img/logo.png" class="img-fluid" alt="RDOPS">
                 <p class="text-muted">Sign In to your account</p>
@@ -17,13 +17,13 @@
                       type="text"
                       class="form-control"
                       placeholder="Username"
-                      ngModel
+                      [(ngModel)]="username"
                       name="username"
                       required
-                      #username="ngModel">
+                      #username1="ngModel">
                   </div>
                   <span
-                    *ngIf="!username.valid && username.touched"
+                    *ngIf=" username1.touched && !username1.valid"
                     class="help-block">Please enter Username!</span>
                 </div>
 
@@ -36,25 +36,23 @@
                       type="password"
                       class="form-control"
                       placeholder="Password"
-                      ngModel
+                      [(ngModel)]="password"
                       name="password"
                       required
-                      #password="ngModel">
+                      #password1="ngModel">
                   </div>
                   <span
-                    *ngIf="!password.valid && password.touched"
+                    *ngIf=" password1.touched && !password1.valid"
                     class="help-block">Please enter Password!</span>
                 </div>
 
                 <div class="row mt-4 mb-4">
                   <div class="col-md-12">
-                    <input type="submit"
+                    <button 
                            id="submit-tf"
                            name="submit"
-                           (click)="login(this.form)"
-
                            class="btn btn-primary button-sign-in form-control"
-                           value="Sign In">
+                            >Login</button>
 
 
                     <!--<button-->
