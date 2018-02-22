@@ -42,7 +42,7 @@ export class RegisterComponent {
           .subscribe(result => {
               if (result.length > 0){
                 this.alertService.success(result,true);
-                this.router.navigate(['login']);
+                this.router.navigate(['/']);
               }
               else{
                 this.alertService.error('Username already Exist try with another username ');
